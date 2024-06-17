@@ -22,7 +22,7 @@ export const SampleSiteFunction: React.FC<ISampleSiteFunctionProps> = (props) =>
     console.log('Action');
     const graphService = new FunctionService(props.serviceScope);
 
-    const resp = await graphService.setNewSiteDescretion(url, description);
+    const resp = await graphService.setNewSiteDescreption(url, description);
     console.log(resp);
   };
 

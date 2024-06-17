@@ -37,20 +37,23 @@ namespace SampleConsumeFunc
 
       string siteUrl = req.Query["URL"];
       string siteDescreption = req.Query["Descreption"];
-      bool siteDescreptionUpdated = await _graphClientService.UpdateSiteDescreption(bearerToken, siteUrl, siteDescreption);
 
       // For a potential POST
-      string bodyContents;
-      using (Stream receiveStream = req.Body)
-      {
-        using (StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8))
-        {
-          bodyContents = readStream.ReadToEndAsync().Result;
-        }
-      }
-      var body = JsonSerializer.Deserialize<Request>(bodyContents);
-      _logger.LogInformation($"URL: {body.URL}");
-      _logger.LogInformation($"URL: {body.Descreption}");
+      //string bodyContents;
+      //using (Stream receiveStream = req.Body)
+      //{
+      //  using (StreamReader readStream = new StreamReader(receiveStream, Encoding.UTF8))
+      //  {
+      //    bodyContents = readStream.ReadToEndAsync().Result;
+      //  }
+      //}
+      //var body = JsonSerializer.Deserialize<Request>(bodyContents);
+      //_logger.LogInformation($"URL: {body.URL}");
+      //_logger.LogInformation($"URL: {body.Descreption}");
+      //string siteUrl = body.URL;
+      //string siteDescreption = body.Descreption;
+
+      bool siteDescreptionUpdated = await _graphClientService.UpdateSiteDescreption(bearerToken, siteUrl, siteDescreption);      
       return new OkObjectResult("Welcome to Azure Functions!");
     }
   }
