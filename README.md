@@ -8,6 +8,7 @@ This combined SharpPoint Framework and Azure Function solution is to provide the
 :-------------------------:
 ![Update site descreption](assets/SetSiteDescreption.png)
 
+For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2024/06/18/calling-microsoft-graph-in-spfx-the-secure-way/SS)
 
 ## Used SharePoint Framework Version
 
@@ -40,10 +41,22 @@ Version|Date|Author|Comments
 ## Minimal Path to Awesome
 
 - Clone this repository
-- Ensure that you are at the solution folder
-- in the command-line run:
-  - **npm install**
-  - **gulp serve**
+    ```bash
+    git clone https://github.com/mmsharepoint/react-site-secure-function-call-smpl.git
+    ```
+- You will need to register an app in Entra ID 
+  - with client secret
+  - with **delegated** Graph permission Sites.FullControl.All
+  - With exposed Api "access_as_user" and App ID Uri api://[Your-Desired-Func-Url]/[Your-ClienID]
+- Azure Function:
+  - Rename local.sample.settings.json to local.settings.json and fill out tenantId, clientId, clientSecret and domain [Your-Desired-Func-Url]
+  - Run F5
+- SPFx web part
+  - Rename azFunct.sample.json to azFunct.json and fill out appIdUri api://[Your-Desired-Func-Url]/[Your-ClienID] 
+  - Ensure that you are at the solution folder
+  - in the command-line run:
+    - **npm install**
+    - **gulp serve**
 
 > Include any additional steps as needed.
 
@@ -54,12 +67,7 @@ Description of the extension that expands upon high-level summary above.
 This extension illustrates the following concepts:
 
 - [Consume multi-tenant enterprise APIs secured with Azure AD in SharePoint Framework](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient-enterpriseapi-multitenant?WT.mc_id=M365-MVP-5004617)
-- topic 2
-- topic 3
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 
