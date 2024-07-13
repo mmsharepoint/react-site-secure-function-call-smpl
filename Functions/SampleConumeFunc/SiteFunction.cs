@@ -53,8 +53,8 @@ namespace SampleConsumeFunc
       //string siteUrl = body.URL;
       //string siteDescreption = body.Descreption;
 
-      bool siteDescreptionUpdated = await _graphClientService.UpdateSiteDescreption(bearerToken, siteUrl, siteDescreption);      
-      return new OkObjectResult("Welcome to Azure Functions!");
+      bool siteDescreptionUpdated = await _graphClientService.UpdateSiteDescreption(bearerToken, siteUrl, siteDescreption);
+      return siteDescreptionUpdated ? new OkObjectResult("") : new BadRequestResult(); ;
     }
   }
 }

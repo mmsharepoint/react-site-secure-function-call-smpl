@@ -18,8 +18,7 @@ export const SampleSiteFunction: React.FC<ISampleSiteFunctionProps> = (props) =>
     setDescription(value);
   };
 
-  const assignPermissions = async () => {    
-    console.log('Action');
+  const assignPermissions = async (): Promise<void> => {    
     const graphService = new FunctionService(props.serviceScope);
 
     const resp = await graphService.setNewSiteDescreption(url, description);

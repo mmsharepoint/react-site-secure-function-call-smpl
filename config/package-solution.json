@@ -35,7 +35,7 @@
     ],
     "webApiPermissionRequests": [
       {
-        "resource": "0a8dfbc9-0423-495b-a1e6-1055f0ca69c2",
+        "resource": "SPFxSecureCall",
         "scope": "user_impersonation"
       }
     ]
